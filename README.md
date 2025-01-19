@@ -8,6 +8,8 @@
 
 VSCode를 이용할 경우, Repository에 포함된 `Compound` launch.json을 통해 즉시 디버깅 및 실행할 수 있습니다.
 
+> Repository를 받은 후 즉시 실행할 경우 `backend` 및 `frontend`에 필요한 종속성 항목들을 install 하는 작업이 있으므로 실행까지 속도가 다소 느릴 수 있습니다.
+
 ![VSCode Run and Debug](docs/vscode_run_and_debug.png)
 
 이미지를 참고하여 `Compound`를 실행시키면 아래와 같은 웹 서비스 환경이 실행됩니다.
@@ -21,20 +23,25 @@ VSCode를 이용할 경우, Repository에 포함된 `Compound` launch.json을 �
 
 CLI 환경에서 직접 처리하고 싶을 경우 아래 순서로 실행하세요.
 
-1. `frontend`에서 `npm run build` 실행 (선택)
+1. `frontend` 에서 npm i 실행
+  ```sh
+  npm i
+  ```
 
-  Axum 서버 환경을 통해 웹페이지를 보고 싶을 경우, `frontend` 디렉토리에서 아래 명령어를 실행하세요.
+2. `frontend`에서 `npm run build` 실행 (선택)
+
+  Axum 서버 환경을 통해 웹페이지를 보고 싶을 경우, `frontend` 디렉토리에서 아래 명령어를 실행하세요. Repository를 처음 clone 한 후 1번 단계 없이 바로 다음 단계 실행 뒤, `localhost:3000` 서비스에 접근하면 웹페이지가 표기되지 않습니다.
   ```sh
   npm run build
   ```
 
-2. 프로젝트 폴더에서 `cargo run` 실행
+3. 프로젝트 폴더에서 `cargo run` 실행
 
   ```sh
   cargo run
   ```
 
-3. `frontend`에서 `npm run dev` 실행
+4. `frontend`에서 `npm run dev` 실행
 
   ```sh
   npm run dev

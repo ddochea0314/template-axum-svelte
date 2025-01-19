@@ -26,6 +26,7 @@
       "type": "node-terminal",
       "request": "launch",
       "name": "Dev Frontend",
+      "preLaunchTask": "npm: install - frontend",
       "command": "npm run dev",
       "cwd": "${workspaceFolder}/frontend",
       "env": {
