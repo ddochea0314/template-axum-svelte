@@ -1,6 +1,6 @@
 # template-axum-svelte
 
-이 프로젝트는 Axum과 Svelte를 사용하여 중소형 웹 풀스택 환경을 구축하는 템플릿입니다.
+이 Repository는 Axum과 Svelte를 사용하여 중소형 웹 풀스택 환경을 구축하는 템플릿입니다.
 
 ## 설치 및 사용법
 
