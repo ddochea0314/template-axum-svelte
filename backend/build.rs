@@ -16,8 +16,20 @@ fn main() {
         fs::remove_dir_all(&target_dir).unwrap();
     }
 
+    // Repository 처음 clone 한 경우, npm install 에서 npm build까지 시간이 걸릴 수 있으므로 최대30초 대기
     if src_dir.exists().eq(&false) {
-        panic!("src/static directory does not exist. you need to `npm run build` in frontend directory");
+        let mut attempts = 0;
+        while attempts < 3 {
+            if src_dir.exists() {
+            break;
+            }
+            attempts += 1;
+            std::thread::sleep(std::time::Duration::from_secs(10));
+        }
+
+        if !src_dir.exists() {
+            panic!("src/static directory does not exist. you need to `npm run build` in frontend directory");
+        }
     }
 
     fs::create_dir_all(&target_dir).unwrap();

@@ -10,10 +10,38 @@
 			"group": {
 				"kind": "build",
 				"isDefault": true
-			  },
+			},
 			"label": "rust: cargo debug build",
 			"options": {
 				"cwd": "${workspaceFolder}/backend"
+			},
+			"dependsOn": "npm: build - frontend",
+			"dependsOrder": "sequence"
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "frontend",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build - frontend",
+			"detail": "vite build",
+			"options": {
+				"cwd": "${workspaceFolder}/frontend"
+			},
+			"dependsOn": "npm: install - frontend",
+			"dependsOrder": "sequence"
+		},
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "frontend",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: install - frontend",
+			"detail": "install dependencies from package",
+			"options": {
+				"cwd": "${workspaceFolder}/frontend"
 			}
 		}
 	]

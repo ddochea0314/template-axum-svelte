@@ -9,15 +9,6 @@ use tower_http::services::{ServeDir, ServeFile};
 use once_cell::sync::Lazy;
 
 #[derive(Serialize, Deserialize)]
-pub struct WeatherForecast {
-    pub date: String,
-    pub temperature_c: f64,
-    pub temperature_f: f64,
-    pub summary: String,
-    pub city : String,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct Movie {
     pub title: String,
     pub director: String,

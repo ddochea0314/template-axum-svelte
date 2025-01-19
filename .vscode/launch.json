@@ -5,17 +5,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "node-terminal",
-      "request": "launch",
-      "name": "Build Frontend",
-      "command": "npm run build",
-      "cwd": "${workspaceFolder}/frontend",
-    },
-    {
       "type": "lldb",
       "request": "launch",
       "name": "Debug Backend",
-      "program": "${workspaceFolder}/target/debug/backend",
+      "program": "${workspaceFolder}/target/debug/backend",      
       "preLaunchTask": "rust: cargo debug build",
       "cwd": "${workspaceFolder}/backend",
       "env": {
@@ -38,7 +31,6 @@
     {
       "name": "Compound",
       "configurations": [
-        "Build Frontend",
         "Debug Backend",
         "Dev Frontend"
       ],
